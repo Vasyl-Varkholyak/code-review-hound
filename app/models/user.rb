@@ -74,6 +74,7 @@ class User < ApplicationRecord
   end
 
   def repos_by_activation_ability
+    Rails.logger.info "REPOS: #{repos.inspect}"
     repos.
       order("memberships.admin DESC").
       order(active: :desc).
