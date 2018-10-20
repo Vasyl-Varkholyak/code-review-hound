@@ -40,6 +40,7 @@ gem "uglifier", ">= 2.7.2"
 gem "webpacker", "~> 3.0"
 gem "webpacker-react", "~> 0.3.1"
 gem "nokogiri", ">= 1.8.2"
+gem 'pry-rails'
 
 group :staging, :production do
   gem "rack-timeout"
