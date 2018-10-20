@@ -61,7 +61,7 @@ class RepoActivator
 
   def add_hound_to_repo
     github.add_collaborator(repo.name, Hound::GITHUB_USERNAME)
-    AcceptGitHubInvitationJob.perform_later(repo.name)
+    AcceptGitHubInvitationJob.perform_now(repo.name)
   end
 
   def github
