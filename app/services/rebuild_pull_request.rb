@@ -8,7 +8,7 @@ class RebuildPullRequest
 
   def call
     if latest_build.present?
-      SmallBuildJob.perform_later(latest_build.payload)
+      SmallBuildJob.perform_now(latest_build.payload)
     end
   end
 

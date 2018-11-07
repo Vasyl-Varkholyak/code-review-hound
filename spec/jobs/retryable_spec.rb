@@ -52,7 +52,7 @@ describe Retryable do
       allow(Retryable).to receive(:retry_delay).and_return(nil)
       allow(Retryable).to receive(:retry_attempts).and_return(2)
 
-      expect { RetryableFailingJob.perform_later }.to raise_error(RuntimeError)
+      expect { RetryableFailingJob.perform_now }.to raise_error(RuntimeError)
 
       expect(RetryableFailingJob.counter).to eq(2)
     end
@@ -61,7 +61,7 @@ describe Retryable do
       allow(Retryable).to receive(:retry_delay).and_return(nil)
       allow(Retryable).to receive(:retry_attempts).and_return(3)
 
-      RetryableFailingJob.perform_later
+      RetryableFailingJob.perform_now
 
       expect(RetryableFailingJob.counter).to eq(3)
     end
