@@ -27,3 +27,8 @@ The names and logos for Hound are trademarks of Hound Group LLC
 
 Hound is Copyright © 2012-2018 Hound Group LLC. It is free software, and may be
 redistributed under the terms specified in the [LICENSE](LICENSE) file.
+
+yarn install
+rake assets:precompile
+rails s -e production
+redmon - Dashboard for redis

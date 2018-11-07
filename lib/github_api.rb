@@ -34,6 +34,8 @@ class GitHubApi
   end
 
   def repos
+    Rails.logger.info "Client: #{client.inspect}"
+    Rails.logger.info "Client repos: #{client.repos.inspect}"
     client.repos
   end
 
