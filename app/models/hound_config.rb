@@ -13,11 +13,11 @@ class HoundConfig
     Linter::Reek => { default: false },
     Linter::Remark => { default: false },
     Linter::Rubocop => { default: true },
-    Linter::SassLint => { default: false },
+    Linter::SassLint => { default: true },
     Linter::Scss => { default: true },
     Linter::Shellcheck => { default: false },
     Linter::SlimLint => { default: false },
-    Linter::Stylelint => { default: false },
+    Linter::Stylelint => { default: true },
     Linter::Swiftlint => { default: true },
     Linter::Tslint => { default: false },
   }.freeze

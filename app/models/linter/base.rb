@@ -14,11 +14,13 @@ module Linter
       file_review = FileReview.create!(
         build: build,
         filename: commit_file.filename,
-        linter_name: name,
+        linter_name: name # Vasyl Varkholyak,
       )
 
       enqueue_job(attributes)
 
+      #CompletedFileReviewJob.perform_now(attributes)
+      #binding.pry
       file_review
     end
 
@@ -34,6 +36,9 @@ module Linter
       self.class.name.demodulize.underscore
     end
 
+    #def version
+    #end
+
     private
 
     attr_reader :hound_config, :build
@@ -47,7 +52,8 @@ module Linter
         linter_name: name,
         patch: commit_file.patch,
         pull_request_number: build.pull_request_number,
-        linter_version: version,
+        linter_version: '', #version,
+        violations: build.violations
       }
     end
 

@@ -35,14 +35,12 @@ class BuildRunner
 
       if build.file_reviews.empty?
         set_no_violations_status
-      else
-        #binding.pry
       end
     end
   end
 
   def relevant_pull_request?
-    pull_request.opened? || pull_request.synchronize?
+    pull_request.opened? || pull_request.synchronize? || pull_request.reopened?
   end
 
   def review_files(build)

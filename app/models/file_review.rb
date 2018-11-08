@@ -3,10 +3,13 @@ class FileReview < ApplicationRecord
   has_many :violations
 
   def build_violation(line, message)
+    #binding.pry
     if line.changed?
+      binding.pry
       violation = find_or_build_violation(line)
       violation.add_message(message)
       violation.patch_position = line.patch_position
+      violation.save #Vasyl Varkholyak
     end
   end
 

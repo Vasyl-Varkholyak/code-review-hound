@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Subscription.create(user_id: 1, repo_id: 11, stripe_subscription_id: 23, price: 1000)
+
+#http://38dbf3d5.ngrok.io/queue/overview
+#username: admin
+#pass: password

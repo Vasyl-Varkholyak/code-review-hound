@@ -11,7 +11,10 @@ class StyleChecker
     find_able_linters(commit_file.filename).
       select(&:enabled?).
       select { |linter| linter.file_included?(commit_file) }.
-      each { |linter| linter.file_review(commit_file) }
+      each do |linter|
+        #binding.pry
+        linter.file_review(commit_file)
+      end
   end
 
   def find_able_linters(filename)
