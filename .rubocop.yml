@@ -1,8 +1,13 @@
+inherit_from: .rubocop.yml
+
 AllCops:
+  Include:
+  - "**/*.rake"
+  - "**/Gemfile"
+  - "**/Rakefile"
   Exclude:
   - "vendor/**/*"
   - "db/**/*"
-  - "bin/*"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
 Naming/AccessorMethodName:
@@ -29,8 +34,6 @@ Naming/FileName:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-files
   Enabled: false
   Exclude: []
-Naming/MemoizedInstanceVariableName:
-  Enabled: false
 Naming/MethodName:
   Description: Use the configured style when naming methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-symbols-methods-vars
@@ -298,10 +301,8 @@ Style/SymbolProc:
   IgnoredMethods:
   - respond_to
 Style/TrailingCommaInArrayLiteral:
-  EnforcedStyleForMultiline: comma
   Enabled: true
 Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: comma
   Enabled: true
 Style/TrailingCommaInArguments:
   Description: Checks for trailing comma in parameter lists and literals.
@@ -547,9 +548,6 @@ Style/FlipFlop:
 Style/IfWithSemicolon:
   Description: Do not use if x; .... Use the ternary operator instead.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-semicolon-ifs
-  Enabled: false
-Style/IfUnlessModifier:
-  Description: Favor modifier if/unless usage when you have a single-line body.
   Enabled: false
 Style/InfiniteLoop:
   Description: Use Kernel#loop for infinite loops.
