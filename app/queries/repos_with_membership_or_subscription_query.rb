@@ -12,10 +12,12 @@ class ReposWithMembershipOrSubscriptionQuery
   private
 
   def subscribed_repos
+    Rails.logger.info "subscribed_repos: #{@user.subscribed_repos.includes(*repo_includes).inspect}"
     @user.subscribed_repos.includes(*repo_includes)
   end
 
   def activatable_repos
+    Rails.logger.info "activatable_repos: #{@user.repos_by_activation_ability.includes(*repo_includes).inspect}"
     @user.repos_by_activation_ability.includes(*repo_includes)
   end
 
