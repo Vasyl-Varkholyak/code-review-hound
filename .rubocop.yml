@@ -1,6 +1,3 @@
-inherit_from:
-  - ../.rubocop.yml
-
 AllCops:
   Exclude:
   - "vendor/**/*"
