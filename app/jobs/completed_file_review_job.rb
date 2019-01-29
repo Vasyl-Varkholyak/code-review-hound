@@ -15,4 +15,20 @@ class CompletedFileReviewJob
   rescue Resque::TermException
     Resque.enqueue(self, attributes)
   end
+
+  def self.perform(attributes)
+    CompleteFileReview.call(attributes)
+  rescue ActiveRecord::RecordNotFound
+    Resque.enqueue_in(30, self, attributes)
+  rescue Resque::TermException
+    Resque.enqueue(self, attributes)
+  end
+
+  def self.perform(attributes)
+    CompleteFileReview.call(attributes)
+  rescue ActiveRecord::RecordNotFound
+    Resque.enqueue_in(30, self, attributes)
+  rescue Resque::TermException
+    Resque.enqueue(self, attributes)
+  end
 end

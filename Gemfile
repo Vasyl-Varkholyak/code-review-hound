@@ -11,6 +11,7 @@ gem "bourbon", "~> 5.0"
 gem "coffee-rails"
 gem "email_validator"
 gem "faraday"
+gem "foreman"
 gem "haml-rails", "~> 1.0"
 gem "high_voltage"
 gem "inifile"
@@ -25,6 +26,7 @@ gem "puma"
 gem "rails", "~> 5.1.4"
 gem "rails-assets-normalize-css", source: "https://rails-assets.org"
 gem "record_tag_helper"
+gem "redis"
 gem "redmon"
 gem "resque", ">= 1.27.4"
 gem "resque-scheduler"
@@ -39,7 +41,10 @@ gem "webpacker", "~> 3.0"
 gem "webpacker-react", "~> 0.3.1"
 gem "nokogiri", ">= 1.8.2"
 gem 'pry-rails'
+<<<<<<< HEAD
+=======
 # gem 'rubocop'
+>>>>>>> master
 
 group :staging, :production do
   gem "rack-timeout"

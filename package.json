@@ -8,7 +8,7 @@
     "test:coverage": "jest --coverage app/javascript/__tests__/*-test.jsx"
   },
   "dependencies": {
-    "@rails/webpacker": "^3.0.1",
+    "@rails/webpacker": "^3.4.3",
     "babel-core": "^6.25.0",
     "babel-loader": "7.x",
     "babel-plugin-react-transform": "^2.0.0",
@@ -71,7 +71,7 @@
     "react-test-renderer": "^15.6.1",
     "react-transform-hmr": "^1.0.2",
     "sinon": "^1.17.6",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^3.1.1"
   },
   "repository": {
     "type": "git",
